@@ -1,5 +1,6 @@
 const fastify = require('fastify')({ logger: true });
 const app = require('./app');
+const serverConfig = require('./config/serverConfig');
 
 // fastify.get('/ping', (req, res) => {
 //     // controller function
@@ -8,12 +9,12 @@ const app = require('./app');
 
 fastify.register(app);
 
-const port = 3000;
 
-fastify.listen({ port: 3000}, (err) => {
+
+fastify.listen({ port: serverConfig.port }, (err) => {
     if (err) {
         fastify.log.error(err);
         process.exit(1);
     };
-    console.log('Server is running on port', port);
+    console.log('Server is running on port', serverConfig.port);
 })
