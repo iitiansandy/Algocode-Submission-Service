@@ -8,6 +8,10 @@ async function pingRequest(req, res) {
 };
 
 async function createSubmission(req, res) {
+    console.log(req.body);
+    // const problemId = req.body.problemId;
+
+    // const problem = await findProblemById(problemId);
     const response = await this.submissionService.addSubmission(req.body);
     return res.status(201).send({
         success: true,

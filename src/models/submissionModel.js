@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const submissionSchema = new mongoose.schema({
+const submissionSchema = new mongoose.Schema({
     userId: { type: String, 
         required: [true, "userId is required" ]
     },
